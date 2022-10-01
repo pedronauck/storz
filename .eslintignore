@@ -1,0 +1,8 @@
+**/node_modules/
+**/coverage/
+*.js
+*.html
+dist
+CHANGELOG.md
+**/*.typegen.ts
+.eslintrc.js
