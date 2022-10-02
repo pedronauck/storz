@@ -10,15 +10,15 @@ The main purpose of this project is make it easy to use XState machines and crea
 
 <h2>📝&nbsp; Table of Content</h2>
 
-* [🚀&nbsp; Features](#-features)
-* [📦&nbsp; Install](#-install)
-* [🧑🏻‍💻&nbsp; Usage](#-usage)
-  * [Setting machine config inside React components](#setting-machine-config-inside-react-components)
-  * [Pre-defining events in the store](#pre-defining-events-in-the-store)
-* [📟&nbsp; Example](#-example)
-* [💪🏻&nbsp; Contributing](#-contributing)
-* [📜&nbsp; License](#-license)
-* [🚀&nbsp; Features](#-features)
+- [🚀&nbsp; Features](#-features)
+- [📦&nbsp; Install](#-install)
+- [🧑🏻‍💻&nbsp; Usage](#-usage)
+  - [Setting machine config inside React components](#setting-machine-config-inside-react-components)
+  - [Pre-defining events in the store](#pre-defining-events-in-the-store)
+- [📟&nbsp; Example](#-example)
+- [💪🏻&nbsp; Contributing](#-contributing)
+- [📜&nbsp; License](#-license)
+- [🚀&nbsp; Features](#-features)
 
 ## 🚀&nbsp; Features
 
