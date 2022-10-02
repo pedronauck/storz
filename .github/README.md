@@ -1,6 +1,6 @@
 <h1>Storz</h1>
 
-[![PR Checks](https://github.com/pedronauck/storz/actions/workflows/pr.yaml/badge.svg)](https://github.com/pedronauck/storz/actions/workflows/pr.yaml)
+[![NPM Version](https://img.shields.io/npm/v/@storz/react)](https://github.com/pedronauck/storz)
 [![License](https://img.shields.io/github/license/pedronauck/storz)](https://github.com/pedronauck/storz)
 [![Issues Open](https://img.shields.io/github/issues/pedronauck/storz)](https://github.com/pedronauck/storz)
 [![Github Forks](https://img.shields.io/github/forks/pedronauck/storz)](https://github.com/pedronauck/storz)
@@ -18,7 +18,6 @@ The main purpose of this project is make it easy to use XState machines and crea
 - [📟&nbsp; Example](#-example)
 - [💪🏻&nbsp; Contributing](#-contributing)
 - [📜&nbsp; License](#-license)
-- [🚀&nbsp; Features](#-features)
 
 ## 🚀&nbsp; Features
 

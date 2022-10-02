@@ -4,5 +4,6 @@
 *.html
 dist
 CHANGELOG.md
+README.md
 **/*.typegen.ts
 .eslintrc.js
