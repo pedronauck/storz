@@ -1,6 +1,6 @@
 {
   "name": "@storz/react",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "license": "MIT",
   "main": "src/index.ts",
   "publishConfig": {
@@ -27,7 +27,8 @@
   "dependencies": {
     "@xstate/react": "^3.0.1",
     "@storz/core": "workspace:*",
-    "react": "^18.2.0"
+    "react": "^18.2.0",
+    "xstate": "^4.33.6"
   },
   "devDependencies": {
     "@types/react": "^18.0.21",

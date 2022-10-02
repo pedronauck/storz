@@ -1,13 +1,6 @@
 <h1>Storz</h1>
 
-[![CI status][github-action-image]][github-action-url]
-[![codecov][codecov-image]][codecov-url]
-
-[github-action-image]: https://github.com/pedronauck/storz/workflows/%E2%9C%85%20test/badge.svg
-[github-action-url]: https://github.com/pedronauck/storz/actions?query=workflow%3A%22%E2%9C%85+test%22
-
-<br>
-
+[![PR Checks](https://github.com/pedronauck/storz/actions/workflows/pr.yaml/badge.svg)](https://github.com/pedronauck/storz/actions/workflows/pr.yaml)
 [![License](https://img.shields.io/github/license/pedronauck/storz)](https://github.com/pedronauck/storz)
 [![Issues Open](https://img.shields.io/github/issues/pedronauck/storz)](https://github.com/pedronauck/storz)
 [![Github Forks](https://img.shields.io/github/forks/pedronauck/storz)](https://github.com/pedronauck/storz)
@@ -17,16 +10,15 @@ The main purpose of this project is make it easy to use XState machines and crea
 
 <h2>📝&nbsp; Table of Content</h2>
 
-- [🚀&nbsp; Features](#-features)
-- [📦&nbsp; Install](#-install)
-- [🧑🏻‍💻&nbsp; Usage](#-usage)
-  - [Setting machine config inside React components](#setting-machine-config-inside-react-components)
-  - [Pre-defining events in the store](#pre-defining-events-in-the-store)
-- [📟&nbsp; Example](#-example)
-- [💪🏻&nbsp; Contributing](#-contributing)
-- [📜&nbsp; License](#-license)
-
-- [🚀&nbsp; Features](#-features)
+* [🚀&nbsp; Features](#-features)
+* [📦&nbsp; Install](#-install)
+* [🧑🏻‍💻&nbsp; Usage](#-usage)
+  * [Setting machine config inside React components](#setting-machine-config-inside-react-components)
+  * [Pre-defining events in the store](#pre-defining-events-in-the-store)
+* [📟&nbsp; Example](#-example)
+* [💪🏻&nbsp; Contributing](#-contributing)
+* [📜&nbsp; License](#-license)
+* [🚀&nbsp; Features](#-features)
 
 ## 🚀&nbsp; Features
 
@@ -65,8 +57,7 @@ export const store = create({
 import { store } from './store';
 
 export function MyComponent() {
-  const service = store.useStoreService('test');
-  const value = store.useStoreSelector(service, (s) => s.context.value);
+  const value = store.useSelector('count', (s) => s.context.value);
   return <div>{value}</div>;
 }
 ```
@@ -105,9 +96,7 @@ import { createStore } from '@storz/react';
 import { testMachine } from './testMachine';
 
 export const store = create(
-  {
-    test: testMachine,
-  },
+  { test: testMachine },
   {
     events: (store) => ({
       someEvent: () => store.send('test', { type: 'MY_EVENT ' }),
@@ -147,9 +136,7 @@ function Decrement() {
 }
 
 function Counter() {
-  const service = store.useStoreService('counter');
-  const value = store.useStoreSelector(service, (s) => s.context.value);
-
+  const value = store.useSelector('counter', (s) => s.context.value);
   return <div>{value}</div>;
 }
 
