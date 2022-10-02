@@ -27,7 +27,8 @@
   "dependencies": {
     "@xstate/react": "^3.0.1",
     "@storz/core": "workspace:*",
-    "react": "^18.2.0"
+    "react": "^18.2.0",
+    "xstate": "^4.33.6"
   },
   "devDependencies": {
     "@types/react": "^18.0.21",

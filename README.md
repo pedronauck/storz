@@ -57,8 +57,7 @@ export const store = create({
 import { store } from './store';
 
 export function MyComponent() {
-  const service = store.useStoreService('test');
-  const value = store.useStoreSelector(service, (s) => s.context.value);
+  const value = store.useSelector('count', (s) => s.context.value);
   return <div>{value}</div>;
 }
 ```
@@ -137,9 +136,7 @@ function Decrement() {
 }
 
 function Counter() {
-  const service = store.useStoreService('counter');
-  const value = store.useStoreSelector(service, (s) => s.context.value);
-
+  const value = store.useSelector('counter', (s) => s.context.value);
   return <div>{value}</div>;
 }
 
