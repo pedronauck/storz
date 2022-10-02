@@ -1,7 +1,7 @@
 {
   "name": "@storz/react",
   "version": "0.0.1",
-  "license": "Apache-2.0",
+  "license": "MIT",
   "main": "src/index.ts",
   "publishConfig": {
     "access": "public",
@@ -26,7 +26,7 @@
   },
   "dependencies": {
     "@xstate/react": "^3.0.1",
-    "storz": "workspace:*",
+    "@storz/core": "workspace:*",
     "react": "^18.2.0"
   },
   "devDependencies": {

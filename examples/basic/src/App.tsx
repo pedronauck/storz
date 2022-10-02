@@ -1,8 +1,3 @@
-import {
-  useSetMachineConfig,
-  useStoreSelector,
-  useStoreService,
-} from '@storz/react';
 import { useState } from 'react';
 
 import { store } from './store';
@@ -17,10 +12,10 @@ function Decrement() {
 
 function Counter() {
   const [double, setDouble] = useState(0);
-  const service = useStoreService(store, 'counter');
-  const value = useStoreSelector(service, (s) => s.context.value);
+  const service = store.useStoreService('counter');
+  const value = store.useStoreSelector(service, (s) => s.context.value);
 
-  useSetMachineConfig(store, 'counter', {
+  store.useSetMachineConfig('counter', {
     actions: {
       setDoubleExternally(ctx) {
         setDouble(ctx.value * 2);

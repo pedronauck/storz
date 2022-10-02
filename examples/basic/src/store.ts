@@ -1,4 +1,4 @@
-import { createStore } from 'storz';
+import { createStore } from '@storz/react';
 
 import { counterMachine } from './counterMachine';
 

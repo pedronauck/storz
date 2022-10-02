@@ -31,18 +31,18 @@ The main purpose of this project is make it easy to use XState machines and crea
 ## 🚀&nbsp; Features
 
 - ✅ Handle global machines easily
-- ✅ Frameworkless library on `storz`
+- ✅ Frameworkless library on `@storz/core`
 - ✅ React integration with `@storz/react`
 - ✅ No external libs, just XState
 
 ## 📦&nbsp; Install
 
 ```bash
-$ yarn add storz @storz/react
+$ yarn add @storz/react
 ```
 
 ```bash
-$ pnpm install storz @storz/react
+$ pnpm install @storz/react
 ```
 
 ## 🧑🏻‍💻&nbsp; Usage
@@ -50,7 +50,7 @@ $ pnpm install storz @storz/react
 - First create you global store with your actions as parameters:
 
 ```jsx
-import { createStore } from 'storz';
+import { createStore } from '@storz/react';
 
 import { testMachine } from './testMachine';
 
@@ -62,13 +62,11 @@ export const store = create({
 - Then, just use your machine anywhere in your application
 
 ```jsx
-import { useStoreService, useStoreSelector } from '@storz/react';
-
 import { store } from './store';
 
 export function MyComponent() {
-  const service = useStoreService(store, 'test');
-  const value = useStoreSelector(service, (s) => s.context.value);
+  const service = store.useStoreService('test');
+  const value = store.useStoreSelector(service, (s) => s.context.value);
   return <div>{value}</div>;
 }
 ```
@@ -79,19 +77,13 @@ One of the main problem when using a global state machine is in the case you nee
 
 ```jsx
 import { useState } from 'react';
-import {
-  useSetMachineConfig,
-  useStoreSelector,
-  useStoreService,
-} from '@storz/react';
 
 import { store } from './store';
 
 function DoubleCounter() {
   const [double, setDouble] = useState(0);
-  const service = useStoreService(store, 'counter');
 
-  useSetMachineConfig(store, 'counter', {
+  store.useSetMachineConfig('counter', {
     actions: {
       setDoubleExternally(ctx) {
         setDouble(ctx.value * 2);
@@ -108,7 +100,7 @@ function DoubleCounter() {
 You can define events inside your store in order to create automatic handlers you can access anywhere also in your code:
 
 ```jsx
-import { createStore } from 'storz';
+import { createStore } from '@storz/react';
 
 import { testMachine } from './testMachine';
 
@@ -132,8 +124,7 @@ Check our [basic example](./examples/basic) in order to see the app up and runni
 But basically that's what you'll find there:
 
 ```jsx
-import { createStore } from 'storz';
-import { useStoreSelector, useStoreService } from '@storz/react';
+import { createStore } from '@storz/react';
 import { counterMachine } from './counterMachine';
 
 const events = (store) => ({
@@ -156,8 +147,8 @@ function Decrement() {
 }
 
 function Counter() {
-  const service = useStoreService(store, 'counter');
-  const value = useStoreSelector(service, (s) => s.context.value);
+  const service = store.useStoreService('counter');
+  const value = store.useStoreSelector(service, (s) => s.context.value);
 
   return <div>{value}</div>;
 }

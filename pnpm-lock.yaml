@@ -59,7 +59,6 @@ importers:
       '@xstate/react': ^3.0.1
       react: ^18.2.0
       react-dom: ^18.2.0
-      storz: workspace:*
       typescript: ^4.6.4
       vite: ^3.1.0
       xstate: ^4.33.6
@@ -68,7 +67,6 @@ importers:
       '@xstate/react': 3.0.1_ptifxsuzjlvytalhuenru25rrq
       react: 18.2.0
       react-dom: 18.2.0_react@18.2.0
-      storz: link:../../packages/storz
       xstate: 4.33.6
     devDependencies:
       '@types/react': 18.0.21
@@ -133,15 +131,15 @@ importers:
 
   packages/storz-react:
     specifiers:
+      '@storz/core': workspace:*
       '@types/react': ^18.0.21
       '@xstate/react': ^3.0.1
       react: ^18.2.0
-      storz: workspace:*
       tsup: ^6.2.3
     dependencies:
+      '@storz/core': link:../storz
       '@xstate/react': 3.0.1_iapumuv4e6jcjznwuxpf4tt22e
       react: 18.2.0
-      storz: link:../storz
     devDependencies:
       '@types/react': 18.0.21
       tsup: 6.2.3
