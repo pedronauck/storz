@@ -2,7 +2,7 @@
 /* eslint-disable @typescript-eslint/naming-convention */
 import type {
   Events,
-  InteralStore,
+  StoreClass,
   MachinesObj,
   RestParams,
   Service,
@@ -16,7 +16,7 @@ import useConstant from './useConstant';
 
 export function createStore<T extends MachinesObj, E extends Events>(
   machines: T,
-  opts?: { events(store: InteralStore<T>): E }
+  opts?: { events(store: StoreClass<T>): E }
 ) {
   const store = createInternalStore<T, E>(machines, opts);
   return {
