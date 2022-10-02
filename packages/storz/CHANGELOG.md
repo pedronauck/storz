@@ -1,5 +1,11 @@
 # @storz/core
 
+## 0.2.1
+
+### Patch Changes
+
+- ✨ Feat: add README, by [@pedronauck](https://github.com/pedronauck) (See [#8](https://github.com/pedronauck/storz/pull/8))
+
 ## 0.2.0
 
 ### Minor Changes
