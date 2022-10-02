@@ -100,8 +100,9 @@ export class StoreClass<T extends MachinesObj> implements IStore<T> {
     key: keyof T,
     machine: M,
     opts: Opts<M> = {}
-  ): Service<T> {
+  ) {
     const { guards, actions, services, delays, ...interpreterOps } = opts;
+    if (!machine) return null;
     const service = interpret(machine, interpreterOps);
     Object.assign(service.machine.options.actions!, actions);
     Object.assign(service.machine.options.guards!, guards);
