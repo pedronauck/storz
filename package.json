@@ -20,7 +20,7 @@
   "scripts": {
     "build": "turbo run build",
     "changeset": "changeset",
-    "changeset:release": "changeset publish",
+    "changeset:release": "changeset publish --no-git-tag",
     "changeset:version": "changeset version",
     "changeset:check": "changeset status --since=main",
     "deps:update": "updates -gu && pnpm -r exec updates -gu",
