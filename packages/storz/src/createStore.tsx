@@ -16,7 +16,7 @@ interface IStore<T extends MachinesObj> {
   __TMachines: T;
 }
 
-export class InteralStore<T extends MachinesObj> implements IStore<T> {
+export class StoreClass<T extends MachinesObj> implements IStore<T> {
   private listeners = new Set<(state: StateObj<T>) => void>();
   readonly services = new Map<keyof T, Service<T>>();
   public machines = new Map<keyof T, AnyStateMachine>();
@@ -115,10 +115,10 @@ export class InteralStore<T extends MachinesObj> implements IStore<T> {
 
 export function createStore<T extends MachinesObj, E extends Events>(
   machines: T,
-  opts?: { events(store: InteralStore<T>): E }
+  opts?: { events(store: StoreClass<T>): E }
 ) {
   // eslint-disable-next-line @typescript-eslint/naming-convention
-  const _store = new InteralStore<T>(machines);
+  const _store = new StoreClass<T>(machines);
   const store = {
     /** @deprecated */
     __store: _store,
