@@ -12,8 +12,7 @@ function Decrement() {
 
 function Counter() {
   const [double, setDouble] = useState(0);
-  const service = store.useStoreService('counter');
-  const value = store.useStoreSelector(service, (s) => s.context.value);
+  const value = store.useSelector('counter', (s) => s.context.value);
 
   store.useSetMachineConfig('counter', {
     actions: {

@@ -10,6 +10,7 @@ import type {
 import { createStore as createInternalStore } from '@storz/core';
 import { useSelector } from '@xstate/react';
 import { useSyncExternalStore } from 'react';
+import type { StateFrom } from 'xstate';
 
 import useConstant from './useConstant';
 
@@ -20,8 +21,14 @@ export function createStore<T extends MachinesObj, E extends Events>(
   const store = createInternalStore<T, E>(machines, opts);
   return {
     ...store,
-    useStoreSelector: useSelector,
-    useStoreService(key: keyof T) {
+    useSelector<K extends keyof T>(
+      key: K,
+      selector: (state: StateFrom<T[K]>) => any
+    ) {
+      const service = this.useService(key);
+      return useSelector(service, selector);
+    },
+    useService(key: keyof T) {
       const { __store } = store;
       return useSyncExternalStore(__store.subscribe.bind(__store), () => {
         const service = __store.services.get(key) as Service<T>;
