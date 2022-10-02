@@ -2,7 +2,14 @@
 import type { AnyState, AnyStateMachine, StateFrom } from 'xstate';
 import { interpret } from 'xstate';
 
-import type { StateObj, Service, MachinesObj, Opts, ValueOf } from './types';
+import type {
+  StateObj,
+  Service,
+  MachinesObj,
+  Opts,
+  ValueOf,
+  Events,
+} from './types';
 
 interface IStore<T extends MachinesObj> {
   /** @deprecated an internal property acting as a "phantom" type, not meant to be used at runtime */
@@ -105,10 +112,6 @@ export class InteralStore<T extends MachinesObj> implements IStore<T> {
     return service as Service<T>;
   }
 }
-
-type Events = {
-  [K in string]: (...args: any[]) => any;
-};
 
 export function createStore<T extends MachinesObj, E extends Events>(
   machines: T,

@@ -1,5 +1,5 @@
 ---
-'storz': minor
+'@storz/core': minor
 '@storz/react': minor
 ---
 

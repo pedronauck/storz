@@ -1,6 +1,4 @@
 {
-  "name": "storz-repo",
-  "version": "0.0.1",
   "private": true,
   "description": "Global state machines in an easy way",
   "author": "Pedro Nauck <pedronauck@gmail.com>",
@@ -12,7 +10,7 @@
     "type": "git",
     "url": "git+https://github.com/pedronauck/storz.git"
   },
-  "license": "Apache-2.0",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/pedronauck/storz/issues"
   },
