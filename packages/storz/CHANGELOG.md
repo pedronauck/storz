@@ -1,5 +1,11 @@
 # @storz/core
 
+## 0.2.2
+
+### Patch Changes
+
+- 🐞 Fix: core types, by [@pedronauck](https://github.com/pedronauck) (See [#10](https://github.com/pedronauck/storz/pull/10))
+
 ## 0.2.1
 
 ### Patch Changes
